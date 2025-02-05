@@ -1,12 +1,12 @@
 const palindromes = function (string) {
    let stringArray = Array.from(string);
-   function isPunctuation(char) {
-      return !char.match(/[ .,:!?@#$%^&*()-=';"+_]/);
+   function notPunctuation(char) {
+      return !char.match(/[ ,.:!?@#$%^&*';"+_]/);
    };
 
-   let noPunctuationArray = stringArray.filter(isPunctuation);
+   let noPunctuationArray = stringArray.filter(notPunctuation);
    let noPunctuationString = noPunctuationArray.join('');
-   let reversedArray = Array.from(noPunctuationString).reverse(); 
+   let reversedArray = Array.from(noPunctuationString).reverse();
    let reversedString = reversedArray.join('');
 
    if (noPunctuationString.toLowerCase() === reversedString.toLowerCase()) {
